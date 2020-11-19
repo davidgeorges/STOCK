@@ -1,0 +1,34 @@
+L'AMITIE : -- Dans les langages orientés objet, l'amitié est le fait de donner un accès complet aux éléments d'une classe. 
+
+Si fonction "F" amie de la classe "A", la fonction "F" pourra modifier les attributs de la classe "A", 	même si les attributs
+sont protégés ou privés, la fonction "F" pourra également utiliser les fonctions privées et protégées de la casse "A".
+
+On dit alors que la fonction "F" est amie de la classe "A".
+
+En déclarant une fonction amie d'une classe, on casse complètement l'encapsulation de la classe.
+Puisque quelque chose d'extérieur à la classe pourra modifier ce qu'elle contient.Il ne faut donc pas abuser de l'amitié.
+
+Il y a  une méthode dans la classe qui, d'une certaine manière, ne sert à rien pour un utilisateur normal. ( affiche()  )
+Dans ce cas, cela ne porte pas vraiment à conséquence. Si quelqu'un utilise la méthode affiche(), alors rien de dangereux pour l'objet ne se passe. Mais dans d'autres cas, il pourrait être risqué d'avoir une méthode qu'il ne faut pas utiliser.
+Dans les laboratoires, si vous avez un gros bouton rouge avec un écriteau indiquant « Ne surtout pas appuyer », vous pouvez être sûrs que quelqu'un va, un jour, faire l'erreur d'appuyer dessus.
+Le mieux serait donc de ne pas laisser apparaître ce levier en surface de notre cube-objet. Ce qui revient à mettre la méthode affiche()dans la partie privée de la classe
+En faisant cela, plus de risque d'appeler la méthode par erreur. Par contre, l'opérateur << ne peut plus, lui non plus, l'utiliser.
+C'est là que l'amitié intervient. Si l'opérateur << est déclaré ami de la classeDuree, il aura accès à la partie privée de la classe et, par conséquent, à la méthode affiche().
+
+
+POUR DECLARER UNE FONCTION AMIE : friend std::nomclasse (paramètre); ( mot clé "friend")
+
+Notre opérateur << a maintenant accès à tout ce qui se trouve dans la classe Duree, sans aucune restriction. Il peut donc en particulier utiliser la méthode affiche().
+Comme précédemment, sauf que désormais, c'est le seul élément hors de la classe qui peut utiliser cette méthode.
+
+IMPORTANT !!!!!!!!!!!! : 
+
+Vos programmes devraient respecter les deux règles suivantes :
+une fonction amie ne doit pas, en principe, modifier l'instance de la classe ;
+les fonctions amies ne doivent être utilisées que si vous ne pouvez pas faire autrement.
+
+
+( L'UTILISER SI UNE FONCTION SERT A SEULEMENT UNE CHOSE ou  SEULEMENT A UN OPERATEUR ) 
+
+Ex : estEgal(), pour l'operateur == , il faudrait mieux utiliser l'amitier pour ne pas crée une methodes pour qu'un seul opérateur.
+ 

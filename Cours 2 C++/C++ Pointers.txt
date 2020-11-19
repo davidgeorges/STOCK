@@ -1,0 +1,135 @@
+Pointeur : 
+
+Declaration  : int* pointVar; // preferred syntax
+
+Assigner adresse a un pointeur :
+
+int* pointVar, var;
+var = 5;
+
+// assigne adresse de var ai pointVar pointeur
+pointVar = &var;
+
+cout << *pointVar << endl; // affiche valeur stocker dans l'adresse , donc 5
+
+changer la valeur pointer par pointeurs :
+
+// changer valeur a l'addresse pointVar
+*pointVar = 1;
+			
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------Pointeurs et Tableaux----------------------------------------------------------
+
+int main()
+{
+    float arr[3];
+
+    // declare pointer variable
+    float *ptr;
+    
+    for (int i = 0; i < 3; ++i)
+    {
+        cout << "&arr[" << i << "] = " << &arr[i] << endl;
+    }
+
+    ptr = arr; // cette ligne est egale a ptr = &arr[0] , donc ptr + 1 = arr[1] , ptr + 2 = arr[2] et ....
+    cout<<"\nDisplaying address using pointers: "<< endl;
+
+    // use for loop to print addresses of all array elements
+    // using pointer notation
+    for (int i = 0; i < 3; ++i)
+    {
+        cout << "ptr + " << i << " = "<< ptr + i << endl;
+    }
+
+    return 0;
+}
+
+----------------------------------------------------------------
+
+Affichage du code au dessus
+
+Displaying address using arrays: 
+&arr[0] = 0x61fef0
+&arr[1] = 0x61fef4
+&arr[2] = 0x61fef8
+
+Displaying address using pointers: 
+ptr + 0 = 0x61fef0
+ptr + 1 = 0x61fef4
+ptr + 2 = 0x61fef8
+
+-----------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------EXEMPLE-----------------------------------------------------------------
+
+PASSAGE REFERENCE SANS POINTEURS
+void swap(int &n1, int &n2) {
+    int temp;
+    temp = n1;
+    n1 = n2;
+    n2 = temp;
+}
+
+int main()
+{
+    // initialize variables
+    int a = 1, b = 2;
+
+    // call function to swap numbers
+    swap(a, b);
+
+    cout << "\nAfter swapping" << endl;
+    cout << "a = " << a << endl; // a vaut 2
+    cout << "b = " << b << endl; // b vaut 1
+
+    return 0;
+}
+
+----------------------------------------------------------------
+void swap(int*, int*);
+
+int main()
+{
+    // initialize variables
+    int a = 1, b = 2;
+
+    // call function by passing variable addresses
+    swap(&a, &b);
+
+    cout << "\nAfter swapping" << endl;
+    cout << "a = " << a << endl; // a vaut 2
+    cout << "b = " << b << endl; // b baut 1
+    return 0;
+}
+
+// function definition to swap numbers
+void swap(int* n1, int* n2) {
+    int temp;
+    temp = *n1;
+    *n1 = *n2;
+    *n2 = temp;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------Memory Management: new and delete-------------------------------------------
+
+quand on alloue avec new int , il faut le supprimer quand on en a plus besoin
+
+// declare an int pointer
+int* pointVar;
+
+// dynamically allocate memory
+// for an int variable 
+pointVar = new int;
+
+// assign value to the variable memory
+*pointVar = 45;
+
+// print the value stored in memory
+cout << *pointVar; // Output: 45
+
+// deallocate the memory
+delete pointVar;

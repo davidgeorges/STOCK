@@ -1,0 +1,245 @@
+Class :
+class  Wall {
+   public:
+    // create a constructor ( fonction de classe )----------------------
+    Wall(); // c'est un type de prototype on va écrire le code dans un fichier cpp du nom de la cass ex; le code avant sera dans wall.h et le code de constructeur dans wall.cpp
+    Wall(int taille) // constructeur avec parametre dans le code cpp , taille = length ou on peut écrire le code directement ici------------------
+    {
+      length = taille;
+    }
+
+    private: // variable de classe------------------------
+    double length;
+    double height;
+
+};
+
+----------------------------------------------------------Copy constructeur--------------------------------------------------------------------
+class Wall {
+   private:
+    double length;
+
+   public:
+
+    // parameterized constructor-------------------------
+    Wall(double len {
+        // initialize private variables
+        length = len;
+	....
+    }
+
+    // copy constructor with a Wall object as parameter--------------------------
+    Wall(Wall &obj) {
+        // initialize private variables------------------------
+        length = obj.length;
+	.....
+    }
+    double calculateArea() { // fonction
+        ....
+    }
+};
+
+int main() {
+    // create an object of Wall class----------------
+    Wall wall1(10.5, 8.6);
+
+    // copie contenue de  room1 a un autre object room2----------------------
+    Wall wall2 = wall1;
+    return 0;
+}
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------Object et Fonction--------------------------------------------------------
+class Student {
+   public:
+    double marks1
+};
+
+// function that returns object of Student-------------------------
+Student createStudent() {
+    Student student;
+    // Initialize member variables of Student----------------------
+    student.marks1 = 96.5;
+    // print member variables of Student----------------------
+    cout << "Marks 1 = " << student.marks1 << endl;
+
+    return student;
+}
+
+int main() {
+    Student student1;
+
+    // Call function---------------------
+    student1 = createStudent();
+
+    return 0;
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------Object Surcharger---------------------------------------------------------
+
+There are 4 operators that cannot be overloaded in C++. They are:
+:: (scope resolution)
+. (member selection)
+.* (member selection through pointer to function)
+?: (ternary operator)
+
+------------------------------------------------------------------
+
+
+// Overload ++ when used as prefix and postfix--------------------
+
+#include <iostream>
+using namespace std;
+
+class Count {
+   private:
+    int value;
+
+   public:
+
+    // Constructor to initialize count to 5----------------
+    Count() : value(5) {}
+
+    // Overload ++ when used as prefix--------------------
+    void operator ++ () {
+        ++value;
+    }
+
+    // Overload ++ when used as postfix---------------
+    void operator ++ (int) {
+        ++value;
+    }
+
+    void display() {
+        cout << "Count: " << value << endl;
+    }
+};
+
+int main() {
+    Count count1;
+
+    // Appel a "void operator ++ (int)" function-------------------
+    count1++; // vaut 6 
+    count1.display();
+
+    // Appel a "void operator ++ ()" function----------------
+    ++ count1; // vaut 7 
+
+    count1.display();
+    return 0;
+}
+
+// ici on ne peut pas faire resultat = cout++; ou  resultat = ++cout; , il faut faire comme dans 'Surchager 2' juste en dessous
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------Object Surcharger 2...----------------------------------------------------
+
+class Count {
+   private:
+    int value;
+
+   public
+       :
+    // Constructor to initialize count to 5-------------------
+    Count() : value(5) {}
+
+    // Overload ++ when used as prefix--------------------
+    Count operator ++ () {
+        Count temp;
+
+        // Here, value is the value attribute of the calling object--------------------
+        temp.value = ++value;
+
+        return temp;
+    }
+
+    // Overload ++ when used as postfix----------------------
+    Count operator ++ (int) {
+        Count temp;
+
+        // Here, value is the value attribute of the calling object----------------------
+        temp.value = ++value;
+
+        return temp;
+    }
+
+    void display() {
+        cout << "Count: " << value << endl;
+    }
+};
+
+int main() {
+    Count count1, result;
+
+    // Call the "Count operator ++ ()" function----------------
+    result = ++count1;
+    result.display();
+
+    // Call the "Count operator ++ (int)" function-----------------------
+    result = count1++;
+    result.display();
+
+    return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------Binary Object Surcharger---------------------------------------------
+
+// C++ program to overload the binary operator +----------------------
+// This program adds two complex numbers------------------------
+
+#include <iostream>
+using namespace std;
+
+class Complex {
+   private:
+    float real;
+    float imag;
+
+   public:
+    // Constructor to initialize real and imag to 0---------------------
+    Complex() : real(0), imag(0) {}
+
+    void input() {
+        cout << "Enter real and imaginary parts respectively: ";
+        cin >> real;
+        cin >> imag;
+    }
+
+    // Overload the + operator ----------------------
+    Complex operator + (const Complex& obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+
+    void output() {
+        if (imag < 0)
+            cout << "Output Complex number: " << real << imag << "i";
+        else
+            cout << "Output Complex number: " << real << "+" << imag << "i";
+    }
+};
+
+int main() {
+    Complex complex1, complex2, result;
+
+    cout << "Enter first complex number:\n";
+    complex1.input();
+
+    cout << "Enter second complex number:\n";
+    complex2.input();
+
+   // complex1 calls the operator function-----------------------
+   // complex2 is passed as an argument to the function-----------------
+    result = complex1 + complex2;
+    result.output();
+
+    return 0;
+}

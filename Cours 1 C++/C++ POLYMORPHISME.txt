@@ -1,0 +1,74 @@
+POLYMORPHISME : CHOSE AYANT PLUSIEURS FORMES
+
+nous allons créer du code fonctionnant de différentes manières selon le type qui l'utilise.
+Exemple :  une fonction pour les classe qui hérite de la classe mère qui ont le même nom, mais qui fonctionne de manière différente , ( il n'affiche pas la même chose)
+
+EX: 3 classe Vehicule , voiture , moto :
+
+class Vehicule
+{
+	void affiche() const;  //Affiche une description du Vehicule
+};
+
+class Voiture : public Vehicule
+{
+ 	void affiche() const;
+};
+
+class Moto : public Vehicule
+{
+	void affiche() const;
+};
+
+Chaque classe affiche donc un message différent ! même si il y a le même noms de méthodes. ( masquage)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Vehicule v;
+    v.affiche();    //Affiche "Ceci est un vehicule."
+
+    Moto m;
+    m.affiche();    //Affiche "Ceci est une moto."
+
+ceci fonctionne en code.
+
+mais si on utilise une methodes presenter et on demande par paramètre un type.
+
+void presenter(Vehicule v)  //Présente le véhicule passé en argument
+{
+    v.affiche();
+}
+
+    Vehicule v;
+    presenter(v);
+
+    Moto m;
+    presenter(m);
+
+cela fait : 
+
+Ceci est un véhicule.
+Ceci est un véhicule.
+
+Le message n'est pas correct pour la moto.Pour que cela fonctionne il faut  utiliser la résolution dynamique des liens.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Les fonctions virtuelles : 
+
+Il faut deux ingrédients :
+	UTILISER des méthodes virtuelles. ( ajouter le mot "virtual" devant la méthodes dans le .h)
+
+Ex : virtual void affiche() const;
+
+et UTILISER un pointeur ou une référence :
+	void presenter(Vehicule const& v)  //Présente le véhicule passé en argument
+	{
+    		v.affiche();
+	}
+et cela fonctionne : 
+	Ceci est un véhicule.
+	Ceci est une moto.
+	 

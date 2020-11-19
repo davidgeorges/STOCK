@@ -1,0 +1,49 @@
+Tableaux :
+
+type nom[taille];
+
+int g[8];   -----------------   g[0]  = premiere case du tableau
+
+premiere case commence a 0
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tableau a plusieur dimensions :
+
+Exemple tableau deux dimension : type nom[taille1][taille2]; --------------  type nom[ligne][col]; ------------  int g[3][5]; = 3 ligne * 5 colonne
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------Fonction et tableau--------------------------------------------------------
+
+Fonction et tableau : 
+
+// prend un  1d tableau en parametre
+void display(int m[5]) {
+    cout << "Displaying marks: " << endl;
+
+    // display array elements    
+    for (int i = 0; i < 5; ++i) {
+        cout << "Student " << i + 1 << ": " << m[i] << endl;
+    }
+}
+
+int main() {
+
+    // declaration et initialisation tableau
+    int marks[5] = {88, 76, 90, 61, 69};
+    
+    // appel fonction et passage du tableau en parametre
+    display(marks);
+
+    return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------Chaine caracteres--------------------------------------------------------
+
+
+char str[] = "Oui"; // 3 caracteres + '\0' carecetre de fin toujours present dans les chaines de caracteres
+
+et string

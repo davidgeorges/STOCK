@@ -1,0 +1,35 @@
+LES ITERATEURS :
+
+DES "POINTEURS" spéciaux pour se déplacer dans les conteneurs.
+
+DECLARATION : vector<int> nom; vector<int>::iterator nom; ( d'abord declarer le conteneurs ensuite l'itérateurs ) ( les conteneurs possèdent des méthodes , begin() et end()
+
+deque<int> d(5,6); //Une deque de 5 éléments valant 6
+deque<int>::iterator it;  //Un itérateur sur une deque d'entiers
+
+Ex : for ( it = d.begin(); it!=d.end(); ++it)
+{
+
+	cout << *it << endl:
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+DES METHODES UNIQUEMENT POUR LES ITERATEURS : 
+
+insert() et erase()
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+LES DIFFERENTS ITERATEURS : 
+
+Les bidirectional iterators : seulement incrementer ou décrementer ( ++ ou -- )
+
+Les random access iterators : ces itérateurs permettent d'accéder au hasard ( au milieu)
+
+vector<int> tab(100,2);  //Un tableau de 100 entiers valant 2
+vector<int>::iterator it = tab.begin() + 7; //Un itérateur sur le 8ème élément
+

@@ -1,0 +1,49 @@
+crée une classe : classe nomclasse
+		  {
+
+		  };
+Variables, ici appelées attributs (on parle aussi de variables membres) 
+Fonctions, ici appelées méthodes (on parle aussi de fonctions membres)
+
+Droit d'accès objet : 
+Public: l'attribut ou la méthode peut être appelé depuis l'extérieur de l'objet.
+Private: l'attribut ou la méthode ne peut pas être appelé depuis l'extérieur de l'objet. Par défaut, tous les éléments d'une classe sontprivate.
+
+Pour chaque méthode, vous devez faire précéder le nom de la méthode par le nom de la classe suivi de deux fois deux points EX: nomclass::nommethodes()
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+Le rôle principal du constructeur est d'initialiser les attributs , le constructeur est une méthode et ne doit rien renvoyer ( il faut le même nom que la class)
+Initialiser nos attributs à l'aide d'un constructeur : 
+
+Personnage(); //  dans le header (.h)
+
+Personnage::Personnage() // dans le main (.cpp)
+{
+    m_vie = 100;
+    m_mana = 100;
+    m_nomArme = "Épée rouillée";
+    m_degatsArme = 10;
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+Autre façon pour initialiser les attributs a utiliser de préférence
+
+Personnage::Personnage() : m_vie(100), m_mana(100), m_nomArme("Épée rouillée"), m_degatsArme(10)
+{
+    //Rien à mettre dans le corps du constructeur, tout a déjà été fait !
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+Supposons que l'on souhaite créer un personnage qui ait dès le départ une meilleure arme, C'est là que la surcharge devient utile. On va créer un deuxième constructeur qui prendra par exemple en paramètre le nom de l'arme et ses dégâts.
+donc dans le .h on ajoute : Personnage(std::string nomArme, int degatsArme);
+et dans le cpp :
+
+Personnage::Personnage(string nomArme, int degatsArme) : m_vie(100), m_mana(100),m_nomArme(nomArme), m_degatsArme(degatsArme)
+{
+ 
+}

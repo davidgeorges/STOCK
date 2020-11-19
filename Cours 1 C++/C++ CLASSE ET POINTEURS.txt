@@ -1,0 +1,39 @@
+Arme *m_arme //L'Arme est un pointeur, l'objet n'est plus contenu dans le Personnage
+
+: Les avantages de cette technique sont les suivants :
+
+: Le Personnage peut changer d'Arme en faisant tout simplement pointer m_arme vers un autre objet. Par exemple, si le Personnage possède un inventaire (dans un sac à dos), il peut changer son Arme à tout moment en modifiant le pointeur.
+
+: Le Personnage peut donner son Arme à un autre Personnage, il suffit de changer les pointeurs de chacun des personnages.
+
+: Si le Personnagen'a plus d'Arme, il suffit de mettre le pointeur m_arme à 0.
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+Gestion de l'allocation dynamique :
+Notre Arme étant un pointeur, il va falloir le créer par le biais d'une allocation dynamique avec new.
+Sinon, l'objet ne se créera pas tout seul.
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+Allocation de mémoire pour l'objet:
+Exemple : 
+Personnage::Personnage() : m_arme(0), m_vie(100), m_mana(100) // constructeur
+{
+    m_arme = new Arme();
+} 
+
+Exemple 2 : 
+Personnage::Personnage(string nomArme, int degatsArme) : m_arme(0), m_vie(100), m_mana(100)
+{
+    m_arme = new Arme(nomArme, degatsArme);
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+Désallocation de mémoire pour l'objet :
+Notre Armeétant un pointeur, lorsque l'objet de type Personnageest supprimé, l'Arme ne disparaît pas toute seule !
+DANS LE DESTRUCTEUR METTRE : delete nompointeur;
+
+utilisation pointeur = nompointeur->qqchose;
+
