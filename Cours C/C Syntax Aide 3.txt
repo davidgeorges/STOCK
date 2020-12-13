@@ -1,0 +1,39 @@
+[Allocation dynamique mémoire]
+	siezof(<donnee>)	: retourne la taille en octects d'une donnée , Syntax : sizeof(int) ( ceci est un exemple)
+	malloc(<taille_en_octets>) : allouer dynamiquement une zone mémoire , Syntax : listeJ = malloc(sizeof(int) * nombreJ); ( ceci est un exemple, pour allouer dynamiquement un tableau)
+	free(<donnee_allouee>) : libère la mémoire allouée dynamiquement , Syntax : free(liseJ);
+
+	calloc(<donnes>, <taille_en_octets>) : alloue et initialise tout a 0 , Syntax : calloc(nombrej, sizeof(int));
+	realloc(<donnes>, <nouvelle_taille>) :	réalloue un espace mémoire , Syntax : realloc(listeJ, nombreJ * sizeof(int));
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+[FICHIERS]
+	FILE * ptFichier = fopen("nom_dossier.format", "mode_ouverture"); 	: r (lecture seule, fichier doit exister)
+										  w (ecriture seule)
+										  a ( ajout fin fichier)
+										  r+ (lecture/écriture, doit exister)
+										  w+ (lecture/écriture, suprimer contenu du fichier)
+										  a+ (ajout lecture/écriture, fint de fichier)
+	fclose(fichier); : fermer un fichier ouvert
+	feof(fichier); : tester la fin d'un fichier
+-------------------------------------------------------------------------------------------------------------------------------------			
+[LECTURE]
+	fgetc() : lire un caractère, Syntax : x = fgetc(ptFichier); x = ( pour stocker la lettre ) si x =0 // EOF ( fin de fichier )
+	fgets() : lire une ligne, Syntax : fgets(chaîne, taille , fichier);
+	fscanf() : lire du texte formaté, Syntax : (fichier,format, variable);
+-------------------------------------------------------------------------------------------------------------------------------------
+[ECRITURE]
+	fputc() : écrire un caractère, Syntax :  fputc(caractère, ptFichier);
+	fputs() : écrire une ligne, Syntax : fputs(chaîne,fichier);
+	fprintf() : écrire du texte formaté, Syntax : fprintf(fichier,format, variable);
+-------------------------------------------------------------------------------------------------------------------------------------
+[POSITIONNEMENT]
+	ftell() : retourne position curseur dans un fichier , Syntax : ftell(fichier);
+	
+	fseek() :d éplace curseur, Syntax : fseek(fichier,deplacement,origine); : deplace curseur -> <origine> : SEEK_SET ( début du fichier ) // SEEK_CUR ( position courante ) // SEEK_END ( fin du fichier)
+	rewind() : réinitialise la position du curseur , Syntax rewind(fichier);
+-------------------------------------------------------------------------------------------------------------------------------------
+[DIVERS]
+rename() : renommer un fichier , Syntax rename(ancien_nom,nouveau_nom);
+remove() : effacer un fichier , Syntax remove(fichier);
+	

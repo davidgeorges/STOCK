@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1569363829 source:c:\users\david\desktop\c prog\triertab\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1599324934 source:c:\users\david\desktop\c prog\d\triertab\main.c
+	<stdio.h>
+	<stdlib.h>
+
