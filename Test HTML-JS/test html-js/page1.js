@@ -17,6 +17,7 @@ function bouton1(){
     }
 
 }
+
 //Fin fonction
 
 //Debut fonction contre
@@ -73,12 +74,7 @@ function hand(){
    if(secretVote){
         var myElement1 = document.getElementById("sp1");
         myElement1.innerHTML = save;
-        var myElement2 = document.getElementById("b1");
-        myElement2.innerHTML = nb1;
-        var myElement3 = document.getElementById("b2");
-        myElement3.innerHTML = nb2;
-        var myElement4 = document.getElementById("b3");
-        myElement4.innerHTML = nb3;
+        refresh_element();
         /* on récupére les balise <b></b> et on y affiche le nouveau resultat de b1..b3 au cas ou on a eu des vote on étant en mode vote secret */
         secretVote = false;
     }
@@ -95,6 +91,18 @@ function secret() {
         console.log("save");
         secretVote=true;  
     }  
+}
+//Fin fonction
+
+//Debut fonction pour refresh les nombre des votes
+function refresh_element() {
+
+    var myElement2 = document.getElementById("b1");
+    myElement2.innerHTML = nb1;
+    var myElement3 = document.getElementById("b2");
+    myElement3.innerHTML = nb2;
+    var myElement4 = document.getElementById("b3");
+    myElement4.innerHTML = nb3;
 }
 //Fin fonction
 
