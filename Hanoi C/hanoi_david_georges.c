@@ -3,20 +3,24 @@
 
 
 
- void hanoi(char Orig, char Dest, char Inter,int nombre_disques_max);
+void hanoi(char orig, char dest, char temp,int no);
 
 int main()
 {
 	int n = 3;
 
-	hanoi('A','C','B',n);
+	hanoi('A','C','B', n+1);
 
 }
 
-void hanoi(char Orig, char Dest, char Inter,int no)
+void hanoi(char orig, char dest, char temp,int no)
 {
-	hanoi(Orig, Inter, Dest ,no-1);	// ss-problème 1
-	printf(" move disque %d from %s to %s",no, Orig,Dest);	// ss-problème 2
-	hanoi(Inter, Dest,  Orig,no-1);	// ss-problème 3
+	if (no>1)
+	{
+		hanoi(orig, temp, dest , no-1);
+		printf("move disque %d from %c to %c \n",no-1, orig,dest);
+		hanoi(temp, dest, orig, no-1);
+	}
+	
 }
 
