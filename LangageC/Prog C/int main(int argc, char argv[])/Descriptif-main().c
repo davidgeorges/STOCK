@@ -1,11 +1,13 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <string.h>
 
 //Le programme simple suivant affiche les paramètres qui lui sont passés depuis le Terminal :
 //prg.c
 int main ( int argc , char * argv[] ) {
 int i;
 // affichage des arguments
+
 printf("Nombre d’arguments passes au programme : %d\n",
 argc);
 for(i = 0 ; i< argc ; i ++) {

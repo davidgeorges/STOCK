@@ -6,7 +6,6 @@
 
 /* ----------------- LISTES CHAINEES ---------------- */
 
-/*Définition type Boolean : première valeur prend 0 et la deuxième prend...*/
 
 /*Structure de controle  (liste ) */
 typedef struct List List;
