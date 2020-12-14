@@ -1,0 +1,32 @@
+Fonction basique
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+-----------------------FONCTION TEMPLATE---------------------------------------------
+
+template<typename nom>
+nom nomfonction(nom nomvariable)
+{
+	instruction...
+	Exemple : return a;
+	
+}
+
+appel fonction : sum<type>(nomvariable); si a vaut 16.5 apres le return elle vaut 16 car on prend que la partie entière
+
+---------------------------------------------------------------------------------------------------------------------
+-----------------------FONCTION LAMBDA---------------------------------------------
+
+[](typevariable nomvarible){instruction;}; // on met la fonction dans une variable
+
+Exemple : int sum = [](14){return a*5;}; // donc 70
+
+[&](typevariable nomvarible){instruction;}; // VEUT DIRE on passe toute les variables par référence
+Exemple : int sum = [](14){return a * nb1;}; /ça fonctionne même car on envoie nb1 par référence
+
+[&] ou [&variable]= toute variable par référence
+[=] ou [variable] = toute variable par valeur 
+

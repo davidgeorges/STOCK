@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1595857710 source:c:\users\david\desktop\c++\prog\class\main.cpp
+	<iostream>
+	<string>
+	"personnage.h"
+
+1588622885 c:\users\david\desktop\c++\prog\class\personnage.h
+	<string>
+	"Arme.h"
+
+1588623496 source:c:\users\david\desktop\c++\prog\class\personnage.cpp
+	<iostream>
+	"personnage.h"
+
+1588621748 c:\users\david\desktop\c++\prog\class\arme.h
+	<iostream>
+	<string>
+
+1595857810 source:c:\users\david\desktop\c++\prog\class\arme.cpp
+	"Arme.h"
+

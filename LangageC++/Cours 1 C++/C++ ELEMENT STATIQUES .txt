@@ -1,0 +1,31 @@
+LES METHODES STATIQUES : -- Ce sont des méthodes qui appartiennent à la classe mais pas aux objets instanciés à partir de la classe.
+qui n'ont pas accès aux attributs de la classe.
+
+Ex dans le .h :  static void maMethode(); 
+
+dans le .cpp : 
+void MaClasse::maMethode() //Ne pas remettre 'static' dans l'implémentation
+{
+    cout << "Bonjour !" << endl;
+}
+
+dans le main() :  MaClasse::maMethode();
+
+Pas besoin de crée des objets pour utiliser les méthodes statiques. et on ne peut pas accéder aux attributs de la classe.
+généralement utiliser pour retourner des infos textes.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+LES ATTRIBUTS STATIQUES : --  les attributs statiques appartiennent à la classe et non aux objets créés à partir de la classe.
+
+Ex dans le .h : static int monAttribut;
+
+Sauf qu'on ne peut pas initialiser l'attribut statique ici. Il faut le faire dans l'espace global.
+c'est-à-dire en dehors de toute classe ou fonction, en dehors du main()notamment. ( généralement dans le .cpp)
+et a return peut etre dans une méthodes statiques.
+
+Un attribut déclaré comme statique se comporte comme une variable globale, c'est-à-dire une variable accessible partout dans le code.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,122 @@
+LES FONCTEURS :
+
+une classe pour 'tableau'
+
+Les foncteurs sont des objets possédant une surcharge de l'opérateur().
+Ils peuvent ainsi agir comme une fonction mais être passés en argument à une méthode ou à une autre fonction
+
+Un foncteur est une classe possédant si nécessaire des attributs et des méthodes.
+Mais, en plus de cela, elle doit proposer un opérateur()qui effectue l'opération que l'on souhaite.
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+CREEZ UN FONCTEUR :
+
+un foncteur qui additionne deux entiers.
+
+class Addition
+{
+public:
+    
+    int operator()(int a, int b)   //La surcharge de l'opérateur ()
+    {
+        return a+b;
+    }
+};
+
+dans le main :     Addition foncteur;
+    		   int a(2), b(3);
+    		   cout << a << " + " << b << " = " << foncteur(a,b) << endl; //On utilise le foncteur comme s'il s'agissait d'une fonction
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+
+NOUS POUVONS UTILISER LES FONCTEURS POUR MODIFIER LE COMPORTEMENT DES CONTENEURS.
+
+EXEMPLE : 
+
+#include <string>
+using namespace std;
+
+class CompareLongueur
+{
+public:
+    bool operator()(const string& a, const string& b)
+    {
+        return a.length() < b.length(); // comparer les chaines de caracteres
+    }
+};
+
+----------------------------------------------------------------------------------------------------------------------------
+
+int main()
+{
+  //Une table qui associe le nom d'un animal à son poids
+  map<string, double,CompareLongueur> poids;  //On utilise le foncteur comme critère de comparaison !!!!!!!!!!!!!!!!!!!
+        
+
+  //On ajoute les poids de quelques animaux       
+  poids["souris"] = 0.05;
+  poids["tigre"] = 200;
+  poids["chat"] = 3;
+  poids["elephant"] = 10000;
+
+  //Et on parcourt la table en affichant le nom et le poids
+  for(map<string, double>::iterator it=poids.begin(); it!=poids.end(); ++it)
+  {
+      cout << it->first << " pese " << it->second << " kg." << endl;
+  }
+  return 0;
+}
+
+RESULTAT : 
+
+chat pese 3 kg. // afficher par plus petit chaine de caracteres
+tigre pese 200 kg.
+souris pese 0.05 kg.
+elephant pese 10000 kg.
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+DES FONCTEURS EVOLUTIFS :
+
+Les foncteurs sont des objets. Ils peuvent donc utiliser des attributs comme n'importe quelle autre classe. 
+Cela nous permet en quelque sorte de créer une fonction avec une mémoire. 
+Elle pourra donc effectuer une opération différente à chaque appel. Je pense qu'un exemple sera plus parlant.
+
+Exemple : 
+
+class Remplir // le foncteur possède un constructeur pour initialiser l'attribut m_valeur
+{
+public:
+    Remplir(int i)
+        :m_valeur(i)
+    {}
+
+    int operator()()
+    {
+        ++m_valeur;
+        return m_valeur;
+    }
+
+private:
+    int m_valeur;
+};
+
+LES PREDICATS : 
+
+Ce sont des foncteurs prenant un seul argument et renvoyant un booléen;
+Ils servent à tester une propriété particulière de l'objet passé en argument.
+
+Ce nombre est-il plus grand que 10 ?
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+ 

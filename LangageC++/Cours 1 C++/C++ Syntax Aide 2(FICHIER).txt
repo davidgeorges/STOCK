@@ -1,0 +1,57 @@
+string const nomdufichier("chemindudossier"); // pour pouvoir utiliser le " nomdufichier.c_str()
+
+crée le fichier = ofstream nomduflux("chemindudossier"); ou si on a utiliser la ligne du dessus (string const...), on peut
+directement mettre : ofstream nomduflux(nomdufichier.c_str()); // ouverture en mode ecriture
+
+nomduflux << "message a écrire dans le fichier" << endl; // 
+ofstream = pour écrire dans le fichier
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+ifstream monFlux("C:/Nanoc/C++/data.txt");  //Ouverture d'un fichier en lecture
+3 moyens de lire un fichier :
+Ligne par ligne en utilisant getline(); // type name;
+string  ligne; // pour stocker le texte a lire et
+getline(monflux,ligne); pour mettre ligne par ligne le texte dans "ligne"
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+Recuperer mot :
+
+Mot par mot en utilisant les chevrons >>; // type name;
+flux >> name;
+string mot;
+flux >> mot;
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+Caractère par caractuère en utilisant get(); // type name;
+flux.get(name);
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+nomduflux.close(); // pour fermer le flux
+
+int position = fichier.tellp(); //On récupére la position pour ofstream
+int position = fichier.tellg(); //On récupére la position pout ifstream
+
+le début du fichier :ios::beg
+la fin du fichier :ios::end
+la position actuelle :ios::cur
+
+Prototype : flux.seekp(nombreCaracteres, position); 
+
+nomduflux.seekp(10, ios::beg) // je me déplace dans le fichier de 10 caractère après le debut (seekp = ofstream)
+seekg = ifstream
+
+Astuce pour connaitre la taille d'un fichier : 
+fichier.seekg(0, ios::end):
+
+int taille;
+taille = fichier.tellg();
+

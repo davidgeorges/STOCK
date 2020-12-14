@@ -1,0 +1,117 @@
+Héritage:
+
+class Animal {
+    // eat() function
+    // sleep() function
+};
+
+class Dog : public Animal { // pour faire en sorte l'héritage on met public et le nom de la classe première
+    // bark() function
+};
+
+dog peut acceder au fonction et attributs de animal , mais animal ne peut pas accéder au fonction et attributs de dog
+
+mais on ne peut acceder au attributs private normalement ?? ( pas sur )
+
+public: If a derived class is declared in public mode, then the members of the base class are inherited by the derived class just as they are.
+private: In this case, all the members of the base class become private members in the derived class.
+protected: The public members of the base class become protected members in the derived class.
+The private members of the base class are always private in the derived class.
+
+Une classe A peut avoir comme héritage une classe B qui elle a comme héritage une classe C
+
+la classe c a acces a B et A et la casse B a acces seulement a  A.
+
+si les fonction on les même noms dans classe A et B il faudras utiliser la technique : variableobject::NomObject.fonction(); comme dans le 'Overriding'
+
+EXEMPLE -------------------------------------------------------------------------------------- Code : 
+class Base {
+    public:
+        int x;
+    protected:
+        int y;
+    private:
+        int z;
+};
+
+class PublicDerived: public Base {
+    // x is public // " ne change pas " et  on peut prendre la valeur directement avec nomobject.nomattributs;
+    // y is protected // " ne change pas " et on peut prendre la valeur seulement avec un return dans la classe hériter
+    // z is not accessible from PrivateDerived  // on peut prendre la valeur seulement avec un return dans la classe mère
+};
+
+class ProtectedDerived: protected Base {
+    // x is protected // " devient protect quand la classe héritier est en protected " et on peut prendre la valeur seulement avec un return dans la classe hériter
+    // y is protected //  " devient protect quand la classe héritier est en protected " et on peut prendre la valeur seulement avec un return dans la classe hériter
+    // z is not accessible from PrivateDerived // Inaccessible 
+};
+
+class PrivateDerived: private Base {
+    // x is private //  " devient private quand la classe héritier est en protected " et on peut prendre la valeur seulement avec un return dans la classe hériter //
+    // y is private //  " devient private quand la classe héritier est en protected " et on peut prendre la valeur seulement avec un return dans la classe hériter
+    // z is not accessible from PrivateDerived // Inaccessible 
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------Fonction de même nom 'Overriding'------------------------------------------------
+
+class Base {
+   public:
+    void print() {
+        cout << "Base Function" << endl;
+    }
+};
+
+class Derived : public Base {
+   public:
+    void print() {
+        cout << "Derived Function" << endl;
+    }
+};
+
+int main() {
+    Derived derived1;
+    derived1.print(); // resultat = Derived Function ; pour a la function de la base nous allons faire derived1.Base::print();
+    return 0;
+}
+------------------------------------------------------
+Appeler la fonction print de  base dans la fonction print de derived on fait Base::print();
+-------------------------------------------------------
+Appeler la fonction avec pointeur : 
+
+Derived derived1;
+
+    // pointeur de type Base qui points sur derived1
+    Base* ptr = &derived1;
+
+    // appeler la fonction de base en utilisant  un pointeur call function of Base class using ptr
+    ptr->print();
+-------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------Amitier Fonction et Amiter Classe------------------------------------------------
+
+Une fonction amis peut acceder au attributs private et protected d'une classe.
+Syntax  : friend returnType functionName(arguments);
+Exemple : A voir danx inheritance Exemple
+
+
+-----------------------------------------------------------------------
+
+Une classe B amis de A peut acceder a tout les membres de la classe A , mais on ne peut pas acceder au membre de la classe B dans la classe A.
+Syntax :
+Exemple  : A voir dans inheritance Exemple
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------Virtual Function--------------------------------------------------------
+
+Si on  a une classe B qui hérite de A , et qu'a l'intérieur des deux classe on a une fonction avec le même nom et qu'on fait ce code :
+
+Derived B;
+Base* base1 = &b
+ base1->print(); // cela va afficher la fonction de la classe A
+
+Mais si on met 'Virtual' dans la classe A devant la fonction qui  a le même nom , on aura comme affichage le fonction de la 	classe B
+
+Exemple : A voir dans Virtual Function
+

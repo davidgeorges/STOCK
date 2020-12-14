@@ -1,0 +1,41 @@
+METHODES SPECIALES :
+	PAS DE CONSTRUCEUR VIRTUEL , MAIS DESTRUCTEUR VIRTUEL POSSIBLE.  virtual ~Class(); 
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+Les collections hétérogènes : ( contient, d'une certaine manière, des types différents. )
+
+Pour faire un tableau dynamique qui contient plusieurs type il faut utiliser les vector et pointeur.
+Ex : vector<type*> nomtableau , Ex : vector<Vehicule*> listeVehicules;
+
+listeVehicules.push_back(new Voiture(15000, 5)); on crée une voiture au prix de 15000 euros et 5 portes. 
+pour chaque "new" il faut utiliser "delete" pour vider la mémoire.
+EX : delete listeVehicules[i]; //On libère la i-ème case mémoire allouée
+     listeVehicules[i] = 0; //On met le pointeur à 0 pour éviter les soucis
+
+pour utiliser le tableau :
+	
+	listeVehicules[0]->affiche();
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+LES FONCTIONS VIRTUELLES PURES : 
+
+on ne sait pas vraiment quoi mettre dans la « version Vehicule» de la méthode.
+Les voitures ont 4 roues et les motos 2 mais, pour un véhicule en général, on ne peut rien dire ! 
+On aimerait bien ne rien mettre ici ou carrément supprimer la fonction puisqu'elle n'a pas de sens
+Mais si on ne déclare pas la fonction dans la classe mère, alors on ne pourra pas l'utiliser depuis notre collection hétérogène.
+Il faut donc la garder mais qu'elle existe mais on a pas le droit de l'utiliser pour ça il faut UTILISER une METHODE VIRTUELLE PURE.
+Pour déclarer une telle méthode, rien de plus simple. Il suffit d'ajouter « = 0 » à la fin du prototype.
+Ex : virtual int nbrRoues() const = 0
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+LES CLASSES ABSTRAITES : 
+
+Une classe qui possède au moins une méthode virtuelle pure est une classe abstraite.
+Notre classe Vehicule est donc une classe abstraite.
+Pourquoi donner un nom spécial à ces classes ? Eh bien parce qu'elles ont une règle bien particulière : on ne peut pas créer d'objet à partir d'une classe abstraite.
+Ex : Vehicule v(10000); //Création d'un véhicule valant 10000 euros.
+
