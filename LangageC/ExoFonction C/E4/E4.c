@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-int printTab(int tab[]);
+void  printTab(int tab[]);
 void minMax(int tab[],int tabMinMax[]);
-int multiplyElem();
-int trierTab(int tab[]);
+void multiplyElem();
+void trierTab(int tab[]);
 
 int main(int argc, char const *argv[])
 {
@@ -38,7 +38,7 @@ int printTab(int tab[]){
 
     minMax(tab,tabMinMax);
     
-    return tab[0];//retourne la première valeur du tableau (nous avons donc toute les autres valeurs car il se suivent)
+    
     
 }
 
@@ -70,7 +70,7 @@ int multiplyElem(){
 
 
 /* Fonction trie tab decroissant */
-int trierTab(int tab[]){
+void trierTab(int tab[]){
 
     int permut = 0;
      for (int i = 0; i <10; i++)
@@ -91,5 +91,4 @@ int trierTab(int tab[]){
             
           }
     }
-    return tab[0];
 }
