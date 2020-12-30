@@ -28,7 +28,7 @@ void divisionPolaire(double,double,double,double,int);/* Division a partir de la
 void conversionToPolaire(double *,double *);/* Conversion de forme cartesienne en forme polaire */
 void conversionToCartesienne(double *,double *);/* Conversion de forme polaire en forme cartesienne */
 void checkValueToPrint(double,double,double);/* Affichage le resultat selon les valeurs , en cours de programmation...*/
-void diviserValue(double,double,double);/* Non programmer... */
+
 
 
 int main(int argc, char const *argv[]){
@@ -39,14 +39,36 @@ int main(int argc, char const *argv[]){
     double x2,y2;
     char poub =' ';
     int val = 0;
+    char choix = ' ';
+    int continuer = 1;
 
-    choixSaisie(&val);
-    saisie(&x1,&y1);/*Appel  a la fonction saisie avec passage des variable par adresse,
-    (car cette fonction déclarer avec des pointeurs en paramètre va directement changer la valeur de nos variable dans le programme principal ( par adresse ))*/
-    saisie(&x2,&y2);
-    /*Mise en place d'une poubelle pour effacer le retour a la ligne avant appel de notre fonction pour saisir un caractère */
-    scanf("%c",&poub);
-    choixOperateur(x1,y1,x2,y2,val);
+    /*Boucle pour refaire des operations arithemetique avec deux nombre compelexe sauf si on decide de quitter*/
+    while (continuer)
+    {
+        choixSaisie(&val);
+        saisie(&x1, &y1);/*Appel  a la fonction saisie avec passage des variable par adresse,
+        (car cette fonction déclarer avec des pointeurs en paramètre va directement changer la valeur de nos variable dans le programme principal ( par adresse ))*/
+        saisie(&x2, &y2);
+        /*Mise en place d'une poubelle pour effacer le retour a la ligne avant appel de notre fonction pour saisir un caractère */
+        scanf("%c", &poub);
+        choixOperateur(x1, y1, x2, y2, val);
+
+        scanf("%c", &poub);
+        printf("Pour quitter le programme veuillez appuyez sur 1 : \n");
+        scanf("%c", &choix);
+
+        if (choix == '1')
+        {
+            continuer = 0;
+            system("cls");
+            printf("Vous venez de quitter le programme.\n");
+        }
+        else
+        {
+            system("cls");
+            printf("Vous avez decider de continuer.\n");
+        }
+    }
 
     return 0;
 }
@@ -110,7 +132,7 @@ void additionCartesienne(double x1,double  y1,double  x2,double  y2,int val){
     
     if (val==0)/* on a recu le nombre en forme polaire*/
     {
-        printf("Addition avec forme polaire, conversion de vos saisie en forme cartesienne, la forme initialse sera conserver...\n");
+        printf("\nAddition avec forme polaire, conversion de vos saisie en forme cartesienne, la forme initialse sera conserver...\n");
         conversionToCartesienne(&x1,&y1);
         conversionToCartesienne(&x2,&y2);
     }
@@ -127,10 +149,12 @@ void additionCartesienne(double x1,double  y1,double  x2,double  y2,int val){
 
     if (resIm <0)
     {
-        printf("Resultat : [%.1lf %.1lf * i]  \n",resReel,resIm);
+        printf("\n Resultat : [%.1lf %.1lf * i]  \n\n",resReel,resIm);
+        printf("\n");
     }else
     {
-        printf("Resultat  : [%.1lf + %.1lf * i]  \n",resReel,resIm);
+        printf("\n Resultat  : [%.1lf + %.1lf * i]  \n\n",resReel,resIm);
+        printf("\n");
     }
     
 }
@@ -140,7 +164,7 @@ void soustractionCartesienne(double x1,double  y1,double  x2,double  y2,int val)
 
     if (val==0)/* on a recu le nombre en forme polaire*/
     {
-        printf("Addition avec forme polaire, conversion de vos saisie en forme cartesienne, la forme initialse sera conserver...\n");
+        printf("\nAddition avec forme polaire, conversion de vos saisie en forme cartesienne, la forme initialse sera conserver...\n");
         conversionToCartesienne(&x1,&y1);
         conversionToCartesienne(&x2,&y2);
     }
@@ -151,10 +175,10 @@ void soustractionCartesienne(double x1,double  y1,double  x2,double  y2,int val)
     /* Affichage selon résulat de resIm (partie imaginaire) */
     if (resIm <0)
     {
-        printf("Resultat : [%.1lf %.1lf * i]  \n",resReel,resIm);
+        printf("\nResultat : [%.1lf %.1lf * i]  \n\n",resReel,resIm);
     }else
     {
-        printf("Resultat : [%.1lf + %.1lf *i]  \n",resReel,resIm);
+        printf("\nResultat : [%.1lf + %.1lf *i]  \n\n",resReel,resIm);
     }
 
  }
@@ -164,7 +188,7 @@ void multiplierPolaire(double x1,double  y1,double  x2,double  y2,int val){
 
     if (val==1)/* on a recu le nombre en forme cartesienne*/
     {
-        printf("Addition avec forme cartesienne, conversion de vos saisie en forme polaire, la forme initialse sera conserver...\n");
+        printf("\nAddition avec forme cartesienne, conversion de vos saisie en forme polaire, la forme initialse sera conserver...\n");
         conversionToPolaire(&x1,&y1);
         conversionToPolaire(&x2,&y2);
     }
@@ -173,7 +197,7 @@ void multiplierPolaire(double x1,double  y1,double  x2,double  y2,int val){
     double reel1 = (x1 * x2 -y1 * y2); /* calcul de (a1⋅a2-b1⋅b2) */
     double im1 = (x1 * y2 + y1 * x2);/* calcul de (a1⋅b2−b1⋅a2) */
     
-    printf("Resultat : [%.1lf + %.1lf * i]  \n",reel1,im1);
+    printf("\n Resultat : [%.1lf + %.1lf * i]  \n\n",reel1,im1);
 }
 
 /* Division forme polaire  x=reel , y=imaginaire*/
@@ -182,7 +206,7 @@ void divisionPolaire(double x1,double  y1,double  x2,double  y2,int val){
     int i=1;
     if (val==1)/* on a recu le nombre en forme cartesienne*/
     {
-        printf("Addition avec forme cartesienne, conversion de vos saisie en forme polaire, la forme initialse sera conserver...\n");
+        printf("\nAddition avec forme cartesienne, conversion de vos saisie en forme polaire, la forme initialse sera conserver...\n");
         conversionToPolaire(&x1,&y1);
         conversionToPolaire(&x2,&y2);
     }
@@ -217,7 +241,7 @@ void conversionToPolaire(double *x1,double  *y1){
 /* Conversion de forme polaire en forme cartesienne x=reel , y=imaginaire*/
 void conversionToCartesienne(double *x1,double *y1){
 
-    printf("Conversion de [%.1lf] , [%.1lf] en forme CARTESIENNE.\n",*x1,*y1);
+    printf("\nConversion de [%.1lf] , [%.1lf] en forme CARTESIENNE.\n",*x1,*y1);
 
     double y1Bis = *y1;
     y1Bis = y1Bis *PI/180;/* convertir degres en radians */
@@ -234,15 +258,15 @@ void checkValueToPrint(double value1,double value2,double value3){
 
      if ((value1 == value2) && (value3 ==0 ))
     {
-        printf("Resultat sous forme carte : [1 + 0 * i]");
+        printf("\nResultat sous forme carte : [1 + 0 * i]\n\n");
     }else
     {
         if (value3==0 ){
-            printf("Resultat sous forme carte : [%.1lf / %.1lf + 0 * i] \n",value1,value2);
+            printf("\nResultat sous forme carte : [%.1lf / %.1lf + 0 * i] \n\n",value1,value2);
         }else
         {
-            printf("Resultat sous forme carte : [%.1lf / %.1lf + ",value1,value2);
-            printf("%.1lf / %.1lf * i]  \n",value3,value2);
+            printf("\nResultat sous forme carte : [%.1lf / %.1lf + ",value1,value2);
+            printf("%.1lf / %.1lf * i]  \n\n",value3,value2);
         }
         
     }
