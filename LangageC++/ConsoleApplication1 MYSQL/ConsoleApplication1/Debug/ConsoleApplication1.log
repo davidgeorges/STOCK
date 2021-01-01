@@ -1,0 +1,10 @@
+﻿  ConsoleApplication1.cpp
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu _mysql_error@4 référencé dans la fonction "void __cdecl registerClient(int *,struct MYSQL *)" (?registerClient@@YAXPAHPAUMYSQL@@@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu _mysql_init@4 référencé dans la fonction "public: __thiscall DataBase::DataBase(void)" (??0DataBase@@QAE@XZ)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu _mysql_real_connect@32 référencé dans la fonction "public: __thiscall DataBase::DataBase(void)" (??0DataBase@@QAE@XZ)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu _mysql_query@8 référencé dans la fonction "void __cdecl registerClient(int *,struct MYSQL *)" (?registerClient@@YAXPAHPAUMYSQL@@@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu _mysql_store_result@4 référencé dans la fonction "public: void __thiscall DataBase::showDataBase(void)" (?showDataBase@DataBase@@QAEXXZ)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu _mysql_fetch_row@4 référencé dans la fonction "public: void __thiscall DataBase::showDataBase(void)" (?showDataBase@DataBase@@QAEXXZ)
+mysqlcppconn.lib : warning LNK4272: type d'ordinateur bibliothèque 'x64' en conflit avec le type d'ordinateur cible 'x86'
+libmysql.lib : warning LNK4272: type d'ordinateur bibliothèque 'x64' en conflit avec le type d'ordinateur cible 'x86'
+C:\Users\S\Documents\VS 2019 Projet\ConsoleApplication1\Debug\ConsoleApplication1.exe : fatal error LNK1120: 6 externes non résolus
