@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-
+/* ---------------------- David Georges ---------------------- 30/12/2020 ---------------------- */
 
 int main()
 {
