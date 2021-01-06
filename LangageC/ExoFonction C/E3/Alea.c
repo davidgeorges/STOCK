@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 #define MIN 8
 
-/* David Georges , renvoie un entier generer entre 8 et X*/
 
+/*------------------------------------------- Georges David , 11/12/2020 -------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------*/
+
+/*renvoie un entier generer entre 8 et X*/
 int alea(int nb1);
 
 int main(int argc, char const *argv[])

@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* David Georges , Code pour faire Initialiser un tableau et Afficher le tableau*/
+/*------------------------------------------- Georges David , 11/12/2020 -------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------*/
 
 //Prototype Fonction
+/* renvoie l'inverse d'un nombre */
 float inverse(float x);
 
 //Fonction principale

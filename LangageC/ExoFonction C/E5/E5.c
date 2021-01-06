@@ -6,6 +6,8 @@
 
 /*------------------------------------------- Georges David , 18/12/2020 -------------------------------------------*/
 
+/* Programe qui demande deux nombre complexe sous forme polaire ou cartesienne pour en faire un calcul              */ 
+
 /*---------------------------------------- Definition forme et aide calcul  ----------------------------------------*/
 
 /* Forme cartèsienne z = x + y i , Forme polaire z = p(cos θ + i sin θ) */
@@ -15,7 +17,7 @@ p = row , θ = angle theta                                                      
 Pour passer de la forme cartèsienne a la forme polaire p =  √x²+y² 
 y = x tg θ                                             θ = arctg(y/x) */
 
-/*---------------------------------------- Definition forme et aide calcul  ----------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------*/
 
 /* Prototypes fonction */
 void saisie(double *,double *);/* Saisie d'un nombre complexe */
@@ -27,7 +29,7 @@ void multiplierPolaire(double,double,double,double,int);/* Multiplier a partir d
 void divisionPolaire(double,double,double,double,int);/* Division a partir de la  forme cartesienne */
 void conversionToPolaire(double *,double *);/* Conversion de forme cartesienne en forme polaire */
 void conversionToCartesienne(double *,double *);/* Conversion de forme polaire en forme cartesienne */
-void checkValueToPrint(double,double,double);/* Affichage le resultat selon les valeurs , en cours de programmation...*/
+void checkValeurAfficher(double,double,double);/* Affichage le resultat selon les valeurs , en cours de programmation...*/
 
 
 
@@ -254,7 +256,7 @@ void conversionToCartesienne(double *x1,double *y1){
 
 }
 
-void checkValueToPrint(double value1,double value2,double value3){
+void checkValeurAfficher(double value1,double value2,double value3){
 
      if ((value1 == value2) && (value3 ==0 ))
     {

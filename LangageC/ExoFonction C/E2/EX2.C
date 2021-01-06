@@ -1,11 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* David Georges , Code pour faire Initialiser un tableau et Afficher le tableau*/
+/*------------------------------------------- Georges David , 11/12/2020 -------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------*/
+
 
 //Prototype Fonction
+/*permet de saisie un entier entre 2 et 6*/
 int saisieEntier();
+/*retourne la factorielle du nombre saisie*/
 int factorielle(int);
+/*affiche un message si le nombre saisie est pair ou non*/
 void parite(int);
 
 //Fonction principale
