@@ -1,0 +1,12 @@
+CREATE DATABASE testdb3;
+USE testdb3;
+CREATE TABLE test2 (id varchar(12), name varchar(14), score int, mdp varchar(20));
+INSERT INTO test2 (id, name, score, mdp) VALUES ("GG18", "Mariann e", 89,"motdepasse6678");
+SELECT * FROM test2;
+
+
+AUTRE COMMANDE :
+
+SELECT * FROM testdb.test; // acceder , afficher la table
+
+DELETE FROM testdb.test WHERE name='namee'; // supprimer ligne entiere

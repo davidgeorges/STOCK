@@ -1,0 +1,83 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" />
+    <script type="text/javascript" src="page1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!--DEBUT-->
+    <div class="w3-panel  w3-leftbar w3-rightbar  w3-bottombar  w3-topbar w3-border-blue">
+        <!-- bandeau(panel) qui prend tout la largeur de l'écran en bleu-->
+        <p>Mise en place de exercice 1</p>
+        <p>Creation d'une card</p>
+        <p>Auteur : David</p>
+        <p>Version : 2.0 : 05/01/2021</p>
+    </div>
+    <body>
+        <div class="w3-panel w3-container w3-blue w3-round-xlarge">
+            <div class="w3-row w3-center">
+                <div class="w3-quarter w3-yellow">
+                    <span id="v1">-vote fermé-</span>
+                </div>
+                <div class="w3-half w3-red">
+                    <span id="sp1"><i class="fas fa-hand-paper"></i> Pour : <b id="b1"></b> Contre : <b id="b2"></b> Abstention : <b id="b3"></b><i class="fas fa-hand-paper"></i> </span>
+                </div>
+                <div class="w3-quarter  w3-purple">
+                    <span id="v2">-vote fermé-</span>
+                </div>
+            </div>
+        </div> 
+
+
+            <div class="w3-card-2 w3-border-right  w3-leftbar  w3-rightbar w3-border-blue " style="width:26%;">
+              <header class="w3-container w3-blue">
+                <h1 class="w3-xlarge"><i class="fas fa-unlock-alt"></i> Appel au vote</h1>
+              </header>
+              <div class="w3-container ">
+                <br>
+                <div><i class="fas fa-box fa-5x w3-left w3-margin-right "></i>
+                <pclass="w3-small"><b><span id="text1">Décision N°5</span></b></p>
+                <p class="w3-small"><span id="text2">Résumé de la décision.....</span></p>
+                <p class="w3-small">Pouvez-vous indiquer votre décision ?</p>
+                <br>
+                <button id="bt1"  class="w3-button w3-white w3-border w3-border-blue w3-margin-right" onclick=bouton1()><i class="far fa-hand-point-right"></i><b>Pour</b>
+                <button id="bt2"  class="w3-button w3-white w3-border w3-border-blue w3-margin-right" onclick=bouton2()><b>Contre</b>
+                <button id="bt3"  class="w3-button w3-white w3-border w3-border-blue " onclick=bouton3()><i class="far fa-hand-point-down"></i><b>Blanc</b>
+              </div>
+              <br>
+            </div>
+              <footer class="w3-container w3-blue">
+                <h5 id="text3" class="w3-small w3-center">Comité directeur du 5 Novembre 2020</h5>
+              </footer>
+            </div>
+
+
+        <!--
+        <div class="w3-container w3-center">
+            <h2>Button</h2>
+            <input id="bt1" type="button" class="w3-button w3-black" value="Pour"  onclick=bouton1()>
+            <input id="bt2" type="button" class="w3-button w3-black" value="Contre" onclick=bouton2()>
+            <input id="bt3" type="button" class="w3-button w3-black" value="Blanc" onclick=bouton3()>
+         </div>
+         <div class="w3-container w3-center">
+            <h2>Vote ON/OFF</h2>
+            <input id="stop1" type="button" class="w3-button w3-black" value="ON" onclick=stop1()>
+            <input id="stop2" type="button" class="w3-button w3-black" value="OFF" onclick=stop2()>
+         </div> 
+         <div class="w3-container w3-center">
+            <h2>Vote Main levée/Secret</h2>
+            <button id="hand"  class="w3-button w3-black w3-round-large w3-margin-right" onclick=hand()><i class="fas fa-hand-paper"></i> <b>Vote a main levée</b>
+            <button id="secret"  class="w3-button w3-black 3-black w3-round-large" onclick=secret()><i class="fas fa-mask"></i> <b>Vote secret</b>
+         </div>
+        -->
+
+    </body>
+
+</html>
+
+

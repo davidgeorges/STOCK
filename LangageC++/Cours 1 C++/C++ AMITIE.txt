@@ -26,7 +26,7 @@ IMPORTANT !!!!!!!!!!!! :
 Vos programmes devraient respecter les deux règles suivantes :
 une fonction amie ne doit pas, en principe, modifier l'instance de la classe ;
 les fonctions amies ne doivent être utilisées que si vous ne pouvez pas faire autrement.
-
+Une fonction amie d'une classe peut accéder à tous ses éléments, même les éléments privés.
 
 ( L'UTILISER SI UNE FONCTION SERT A SEULEMENT UNE CHOSE ou  SEULEMENT A UN OPERATEUR ) 
 

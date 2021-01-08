@@ -1,0 +1,59 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" />
+    <script type="text/javascript" src="page1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!--DEBUT-->
+    <div class="w3-panel  w3-leftbar w3-rightbar  w3-bottombar  w3-topbar w3-border-blue">
+        <!-- bandeau(panel) qui prend tout la largeur de l'écran en bleu-->
+        <p>Mise en place de exercice 1</p>
+        <p>Creation d'un bandeau parametrable</p>
+        <p>Auteur : David</p>
+        <p>Version : 1.0 : 24/11/2020</p>
+    </div>
+    <body>
+        <div class="w3-panel w3-container w3-blue w3-round-xlarge">
+            <div class="w3-row w3-center">
+                <div class="w3-quarter w3-yellow">
+                    <span id="v1">-vote fermé-</span>
+                </div>
+                <div class="w3-half w3-red">
+                    <span id="sp1"><i class="fas fa-hand-paper"></i> Pour : <b id="b1"></b> Contre : <b id="b2"></b> Abstention : <b id="b3"></b><i class="fas fa-hand-paper"></i> </span>
+                </div>
+                <div class="w3-quarter  w3-purple">
+                    <span id="v2">-vote fermé-</span>
+                </div>
+            </div>
+        </div> 
+        <div class="w3-container w3-center">
+            <h2>Button</h2>
+            <!-- Appel au fonction selon le bouton click-->
+            <input id="bt1" type="button" class="w3-button w3-black" value="Pour"  onclick=bouton1()>
+            <input id="bt2" type="button" class="w3-button w3-black" value="Contre" onclick=bouton2()>
+            <input id="bt3" type="button" class="w3-button w3-black" value="Blanc" onclick=bouton3()>
+         </div>
+         <div class="w3-container w3-center">
+            <h2>Vote ON/OFF</h2>
+            <!-- Appel au fonction selon le bouton click-->
+            <input id="stop1" type="button" class="w3-button w3-black" value="ON" onclick=stop1()>
+            <input id="stop2" type="button" class="w3-button w3-black" value="OFF" onclick=stop2()>
+         </div> 
+         <div class="w3-container w3-center">
+            <h2>Vote Main levée/Secret</h2>
+            <!-- Appel au fonction selon le bouton click-->
+            <button id="hand"  class="w3-button w3-black w3-round-large w3-margin-right" onclick=hand()><i class="fas fa-hand-paper"></i> <b>Vote a main levée</b>
+            <button id="secret"  class="w3-button w3-black 3-black w3-round-large" onclick=secret()><i class="fas fa-mask"></i> <b>Vote secret</b>
+         </div>
+    </body>
+    
+
+</html>
+
+

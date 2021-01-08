@@ -47,8 +47,8 @@ Ex: Personnage::Personnage(string nom) : m_vie(100), m_nom(nom)
 -----------------------------------------------------------------------------------------------------------------------------------
 
 LA PORTEE PROTECTED :
-les attributs en protected c'est interdire l'utilisation en dehors de la classe ( comme private ) sauf pour les classe héritière (classe fille)
-( mieux de toujours mettre en proteced tout les attributs ).
+les attributs en protected c'est interdire l'utilisation en dehors de la classe ( comme private ).
+( mieux de toujours mettre en proteced tout les attributs ). (on peut y acceder avec la classe fille directement).
 
 -----------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------
