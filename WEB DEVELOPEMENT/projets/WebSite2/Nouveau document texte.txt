@@ -1,0 +1,34 @@
+		   <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="Image/1063-900x300.jpg" />
+                        </div>
+
+                        <div class="item">
+                            <img src="Image/26-900x300.jpg" />
+                        </div>
+
+                        <div class="item">
+                            <img src="Image/743-900x300.jpg" />
+                        </div>
+
+                        <div class="item">
+                            <img src="Image/791-900x300.jpg" />
+                        </div>
+                    </div>
+
+
+		<div class="carousel-inner ">
+                        <div class="item active">
+                            <img src="Image/h55.jpg" />
+                        </div>
+                        <div class="item">
+                            <img src="Image/h6.jpg" />
+                        </div>
+                        <div class="item">
+                            <img src="Image/h7.jpg" />
+                        </div>
+                        <div class="item">
+                            <img src="Image/h8.jpg" />
+                        </div>
+                    </div>
+                </div>

@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    
+
+    <!-------------------------------------Code CSS --------------------------------------------->
+    <!-------------------------------------Code CSS --------------------------------------------->
+
+    <style type="text/css">
+
+        body {
+            background-color:#e4e4e4;
+        }
+ 
+        header, section, footer,nav { /*Pour les trois balises on va mettre des bordure grise de 5px*/
+            margin-bottom: 10px;
+        }
+
+        footer{
+            color:black;
+            font-family:Arial;
+        }
+
+        h1 {
+            font-family: Arial;
+        }
+
+
+         /*CREATION DU BLOCK*/
+        article {
+            width: 250px; /*largeur*/
+            height: 250px; /*hauteur*/
+            float: left;
+            margin-left: 15px;
+            background-color: #f8f8f8; /*couleur grey */
+            color: #000000; /*couleur du premier plan : le texte écrit "See more..."*/
+            text-align: center;
+            border: 1px solid #444;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            padding-left: 5px;
+            padding-right : 5px;
+        }
+
+
+
+        #section1 { /* on va appliquer les instructions pour tout ce qui est dans les id : main*/
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #div1 {
+            width: 200px; /*largeur*/
+            height: 75px; /*hauteur*/
+            margin: auto; /*centrage de la div dans la page*/
+            background-color: #0094ff; /*couleur de fond (bleu)*/
+            border: 1px solid #ccc; /*bordure grise du "bouton"*/
+            border-radius: 8px; /*angles arrondis*/
+            text-shadow: -1px -1px rgba(0, 0, 0, 0.31); /*effet d'ombrage du texte "See more" */
+            color: #FFFFFF; /*couleur du premier plan : le texte écrit "See more..."*/
+        }
+
+        #section2 {
+            clear: both;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+
+        #sidebar { /* on va appliquer les instructions pour tout ce qui est dans les id : sidebar */
+            float: left;
+            width: 22;
+            margin-left: 10px;
+        }
+        
+
+        #contact {
+            clear: both; /*ne tien pas compte des instruction en haut et viens  se mettre en bas du dernier element qui occupe le plus de place verticalement*/
+            text-align:center;
+            padding-top:10px;
+        }
+
+        .centrer {
+            text-align: center;
+        }
+
+
+        .colgrey {
+            color: grey;
+            font-family: Arial;
+        }
+
+       #nav1 {
+
+           padding-bottom: 15px;
+           padding-top: 15px;
+           background-color:#444;
+           color:white;
+           text-align:center;
+       }
+
+    </style>
+
+    <!-------------------------------------Code HTML --------------------------------------------->
+    <!-------------------------------------Code HTML --------------------------------------------->
+</head>
+<body>
+
+    <section>
+        <nav id="nav1">
+            <!--balise type nav pour lien de naviguation-->
+            Top Work Portofolio Contact
+        </nav>
+
+        <header>
+            <!--balise type header-->
+            <h1 class="centrer">Le titre</h1>
+            <p class="centrer colgrey">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam condimentum, ante ut dictum porta, augue dui ultrices metus, at convallis dolor urna sit amet lectus </p>
+
+        </header>
+
+    </section>
+
+    <section id="section1">
+
+        <!--balise type nav pour section de page -->
+        <article>
+            <h1> Cosequat Lorem</h1>
+            <p class="colgrey">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt tortor et aliquet dignissim.</p>
+        </article>
+        <article>
+            <h1> Cosequat Lorem</h1>
+            <p class="colgrey">Pellentesque viverra, tortor quis efficitur venenatis, lacus est ornare eros, et pellentesque nisi massa quis augue.</pclass="colgrey">
+        </article>
+        <article>
+            <h1> Cosequat Lorem</h1>
+            <p class="colgrey">Vestibulum at venenatis libero. Phasellus blandit vel sem in venenatis. In orci turpis, gravida et maximus ac, dictum non eros.</p>
+        </article>
+
+        <!--<nav>
+            lienA lienB lienC
+        </nav>-->
+
+    </section>
+
+    <section id="section2">
+        <p class="colgrey"> Suspendisse varius, orci ut euismod bibendum, tortor nibh pulvinar est, non vestibulum ipsum metus non nunc. </p>
+
+        <div id="div1">
+            <h2>See more...</h2>
+        </div>
+    </section>
+    <!--<aside id="sidebar">
+        Commentaires
+    </aside>-->
+
+    <footer id="contact">
+        <!--Pied de page-->
+        <h2>Here's some stuff i made recently.</h2>
+        <p class="colgrey">Aliquam sodales condimentum fermentum. Aenean vulputate consectetur tempus. Vivamus turpis erat, convallis in pellentesque a, bibendum at mauris</p>
+    </footer>
+
+
+
+</body>
+</html>
