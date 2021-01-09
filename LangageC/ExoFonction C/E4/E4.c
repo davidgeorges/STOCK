@@ -4,6 +4,7 @@
 #define N 5
 
 /*------------------------------------------- Georges David , 11/12/2020 -------------------------------------------
+<<<<<<< HEAD
 
 
 ------------------------------------------------------------------------------------------------------------------*/
@@ -29,6 +30,23 @@ void trierTab(int tab[]);
 /*Affiche le tableau*/
 void printTab(int tab []);
 
+=======
+
+
+------------------------------------------------------------------------------------------------------------------*/
+
+/*Affichage et intialise le tableau avec des valeurs aléatoire*/
+void printInitTab(int tab[]);
+/*Stock la plus petite et grande valeur du tableau*/
+void minMax(int tab[],int tabMinMax[]);
+/*Multiple l'element du tableau 1 et tableau 2 et on le stock dans le tableau 3*/
+void multiplyElem(int tab [], int tab2[],int tab3[]);
+/*Trie le tableau dans l'ordre */
+void trierTab(int tab[]);
+/*Affiche le tableau*/
+void printTab(int tab []);
+
+>>>>>>> 22de32ca938c92854f3be2a6b2dae27002a6b99f
 int main(void)
 {
     /* code */
@@ -67,6 +85,7 @@ void printInitTab(int tab[]){
         printf("Element %d vaut : %d \n",i,tab[i]);
     }
 
+<<<<<<< HEAD
     minMax(tab);/*vu qu'on a deux tableau intialiser pour l'instant
     je met directement l'appel a minMax ici qui ce fera pour chaque tableau  */
     
@@ -82,6 +101,25 @@ void printTab(int *tab){
     {
         printf("Element [%d] vaut : %d \n",i,tab[i]);
     }
+=======
+    minMax(tab,tabMinMax);/*vu qu'on a deux tableau intialiser pour l'instant
+    je met directement l'appel a minMax ici qui ce fera pour chaque tableau  */
+    
+    
+}
+
+/* Fonction affichage du tableau */
+void printTab(int *tab){
+
+    int i;
+
+    for ( i= 0; i <N; i++)
+    {
+        printf("Element [%d] vaut : %d \n",i,tab[i]);
+    }
+
+    
+>>>>>>> 22de32ca938c92854f3be2a6b2dae27002a6b99f
     
 }
 
@@ -91,7 +129,11 @@ void minMax(int tab[],int tabMinMax[]){
     int i;
     tabMinMax[0] = tab[0];
     tabMinMax[1] = tab[0];
+<<<<<<< HEAD
     for ( i = 1; i <N-1; i++) /* i = 1 et N-1 car on a deja le premier element affecter , donc on compare les autres ..
+=======
+    for ( i = 1; i <N-1; i++) /* i = 1 et N-1 car on a deja le premier element affecter , donc on compare les autres ..*/
+>>>>>>> 22de32ca938c92854f3be2a6b2dae27002a6b99f
     {
         if (tab[i]<tabMinMax[0])
         {
