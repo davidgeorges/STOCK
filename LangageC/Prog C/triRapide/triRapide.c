@@ -1,35 +1,88 @@
 #include <stdio.h>
-
 #define N 10
+
+/*On met tout les valeurs inférieurs au pivot a sa gauche et les valeurs supérieurs au pivot a  sa droite
+  on change la taille lors du premier appel le pivot lors de la deuxième appel*/
 
 int x =0;
 
+void afficheTab(int tab[]){
+     printf("Tableau : ");
+    for (int i = 0; i < N; i++)
+    {
+       
+        printf("Tableau : [%d] , ",tab[i]);
+    }
+    
+    printf("\n");
+}
+
+void afficheTabApres(int tab[]){
+    printf("Tableau apres permut : ");
+    for (int i = 0; i < N; i++)
+    {
+        
+        printf(": [%d] ",tab[i]);
+    }
+    
+    printf("\n");
+}
+
 int partitionner(int *tableau, int p, int r) {
-    int pivot = tableau[p], i = p-1, j = r+1;
+    int pivot = tableau[p], i = p-1, j = r+1; // -1 et +1 car on fait un do while
     int temp;
     while (1) {
-        do
+        do{
             j--;
-        while (tableau[j] > pivot);
-        do
+
+            //printf("on cherche un element plus petit que %d ,",pivot);
+
+        }while (tableau[j] > pivot);//si l'element de droit est plus grand que le pivot on decremente pour en chercher un plus petit, si il est plus petit on sort(on cherche l'element le plus petit)
+
+        //printf("[%d] < [%d] , ",tableau[j],pivot);
+
+        do{
             i++;
-        while (tableau[i] < pivot);
-        if (i < j) {
+
+            //printf("on cherche un element plus grand que %d , \n",pivot);
+
+        }while (tableau[i] < pivot);//si l'element de gauche est plus petit que le pivot on incremente pour en chercher un plus grand, si il est plus grand on sort(on cherche l'element le plus grand)
+
+        //printf("[%d] < [%d] , \n",tableau[j],pivot);
+        //afficheTab(tableau);
+       // printf("valeur de i %d et j %d \n",i,j);
+
+        if (i < j) {// si i<j on s'est croisé
+
+            //printf("Permutation de %d et %d \n",tableau[i],tableau[j]);
+
             temp = tableau[i];
             tableau[i] = tableau[j];
             tableau[j] = temp;
+
+            //afficheTabApres(tableau);
+            
         }
-        else
-            return j;
-    }
+        else{
+
+            //printf("on retourne \n");
+            //printf("Valeur de i [%d] et j [%d] \n",i,j);
+            return j;//condition de sortie
+        }
+
+       // printf("\n \n");
+    }   
 }
 
 void quickSort(int *tableau, int p, int r) {
     int q;
     if (p < r) {
+        //printf("ICI Valeur de p [%d] et r [%d] \n",p,r);
         q = partitionner(tableau, p, r);
-        quickSort(tableau, p, q);
-        quickSort(tableau, q+1, r);
+        //printf("cette appel 1 - ");
+        quickSort(tableau, p, q);//ici on a deja fait un petit trie avec la taille de fin de tableau modifier
+        //printf("cette appel - ");
+        quickSort(tableau, q+1, r);//ici on refait le tri avec un autre pivot et la vrai taille du tableau
     }
 }
 
@@ -39,7 +92,7 @@ int main() {
 
     nbr=10;
   
-    quickSort(tab,0,10);
+    quickSort(tab,0,9);//N-1
 
     //triRapid(tab, 0, nbr - 1);
     
