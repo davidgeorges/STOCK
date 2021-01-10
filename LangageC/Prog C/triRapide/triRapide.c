@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 10
+#define N 4
 
 /*On met tout les valeurs inférieurs au pivot a sa gauche et les valeurs supérieurs au pivot a  sa droite
   on change la taille lors du premier appel le pivot lors de la deuxième appel*/
@@ -87,12 +87,12 @@ void quickSort(int *tableau, int p, int r) {
 }
 
 int main() {
-    int tab[N] = {5,0,10,9,6,1,4,5,2,4};
+    int tab[N] = {5,0,10,9};
     int nbr, i;
 
     nbr=10;
   
-    quickSort(tab,0,9);//N-1
+    quickSort(tab,0,N-1);//N-1
 
     //triRapid(tab, 0, nbr - 1);
     
@@ -105,40 +105,31 @@ int main() {
     return 0;
 }
 
-/*
-void triRapid(int tab[], int first, int last) {
-    int pivot, i, j;
-    if(first < last) {
-        pivot = first;
-        i = first;
-        j = last;
-        while (i < j) {
-            printf("Valeur de  i avant : %d \n",i);
-            while(tab[i] <= tab[pivot] && i < last){ //on incremente i jusqu'a trouver les element plus petit que le pivot
-                printf("tab i :[%d] = %d et tab pi : [%d] = %d \n",i,tab[i],pivot,tab[pivot]);
-                i++;
-            }
-            printf("Valeur de  i : %d \n",i);
-            printf("Premiere boucle stoper tab i  %d :[%d] plus grand que  tab p %d  :[%d]  \n",i,tab[i],pivot,tab[pivot]);
-            printf("Valeur de  j avant : %d \n",j);
-            while(tab[j] > tab[pivot]){// on decrement j jusqua trouver les elements plus grand que le pivot
-                printf("tab j : [%d] = %d et tab pi : [%d] = %d \n",j,tab[j],pivot,tab[pivot]);
-                j--; 
-            }
-            printf("Valeur de  j : %d \n",j);
-            printf("Deuxieme boucle stoper tab j  %d :[%d] plus petit que  tab p %d  :[%d]  \n",j,tab[j],pivot,tab[pivot]);
-            if(i < j) {
-                permuter(&tab[i], &tab[j]);
-                printf("tab i : [%d] = %d permut ici avec tab j :[%d] = %d \n",i,tab[i],j,tab[j]);
-            }
-            printf("[%d] < [%d] ?   \n",i,j);
-        }
-        printf("J : %d est  plus petit que I %d \n",j,i);
-        permuter(&tab[pivot], &tab[j]);
-        printf("tab[%d] = %d permut avec tab[%d] = %d \n",pivot,tab[pivot],j,tab[j]);
-        triRapid(tab, first, j - 1);
-        printf("J CHANGE \n");
-        triRapid(tab, j + 1, last);
-    }
+/*explication pour un tableau de 4 elements 
+{5, 0, 10, 9}
+ 0  1  2   3
 
-}*/
+Premier appel : quickSort(tab,0,N-1)
+Premier Appel qs(0,3) , pivot = t0(5), i(-1) , boucle j = j(4), j-- t3>5(9>5 , oui), j-- t2>5(10>5 , oui) j-- t1>5(0>5 , NON ,j=1)//boucle i =  i++ t0>5(5<5 NON , i=0)
+si i<j ( 0<1 , oui donc permute = 0, 5, 10, 9) , boucle j = j-- t0>5 (5>5 non , j=0)//boucle i = i++ t1>5(5<5 NON , i=0), i<j (0<0 non on sort et return j(0) ) donc q = 0
+
+
+appel recu1(0,0) (0<0 non on sort sans rien faire) , 
+
+ici p = 0 et r 3
+
+recu2(1,3)(premiere appel) (1<3) donc on continue et on rappel partition !!  [avec 1 et 3] , pivot = 5, [ i =0, j=4 ] // boucle j , j-- t3>5(9>5 oui), j-- t2>5(10>5 oui), j-- t1>5(5>5 non (j=1))
+//boucle i =  i++ t1>5(5<5 NON , i=1) , i<j (1<1 non on sort et return j(1) ) donc q = 1
+
+
+tab : 0, 5, 10, 9
+appel recu1(deuxieme appel) avec [(1,1)] (1<1 non on sort sans rien faire) ,
+ici q = 1(p)
+recu2(2,3)(deuxieme appel) (2,3) (2<3 oui) on rappel partition avec   [2 ,3] !!, pivot = 10  [ i=1, j=4 ]// boucle j , j-- t3>10 (non on sort j = 3)
+//boucle i =  i++ t2>10(10<10 NON on sort, i=2), i<j (2<3) on permute :0, 5, 9,10 // boucle j , j-- t2>10 ( 9>10 non on sort j = 2)// boucle i , i-- t3>10 (10>10 non on sort j = 3)
+i<j ( 3<2 non on sort et retourne 2); q= 2
+
+appel recu1(troisieme fois) (appeler avec p = 2 et r 2) , qs(2,2) p<r (2<2 non on sort) et on appel recu2(troisieme fois) , qs(3,2) p<r (3<2 non on sort) et il n'y a plus de rappel !
+
+Le tableau est trié */
+ 
