@@ -1,5 +1,4 @@
-// A recursive binary search function. It returns location of x in 
-// given array arr[l..r] is present, otherwise -1 
+
 int binarySearch(int tab[], int debut, int fin, int x) 
 { 
     /* x : valeur a chercher */
