@@ -96,7 +96,7 @@ void compterOccurence(char nom[],int carTrouver,int comptTab2,int tab[],int tail
             i++;
         }
         
-        /*on rappel la fonction avec un nouveau caractere a trouver et on incrementant le compteur pour effectuer 25 iterrations*/
+        /*on rappel la fonction avec un nouveau caractere a trouver et on incrementant le compteur pour effectuer 26 iterrations*/
         compterOccurence(nom,carTrouver+1,comptTab2+1,tab,taille);
     }else
     {
