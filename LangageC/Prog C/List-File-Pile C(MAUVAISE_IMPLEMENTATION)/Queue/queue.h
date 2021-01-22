@@ -41,12 +41,12 @@ static int nb_elements =0;
 
 /* Prototypes */
 int is_empty_queue(Queue *);
-Queue *new_list(void);
+Queue* new_list(void);
 int queue_length();
 int queue_first(Queue *qu);
-Queue *push_queue(Queue *qu, int x);
+Queue* push_queue(Queue *qu, int x);
 void print_queue(Queue *);
-Queue *pop_queue(Queue *);
-Queue *del_queue(Queue *);
+Queue* pop_queue(Queue *);
+Queue* del_queue(Queue *);
 
 #endif

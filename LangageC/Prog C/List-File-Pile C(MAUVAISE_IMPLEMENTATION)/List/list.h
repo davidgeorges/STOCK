@@ -19,14 +19,14 @@ struct List
 };
 
 /* Prototypes */
-List *new_list(void);
+List* new_list(void);
 int is_empty_list(List  *li);
 int list_length(List *li);
 void print_list(List *li);
-List *push_back_list(List *li, int x);
-List *push_front_list(List *li, int x);
-List *pop_back_list(List *li);
-List *pop_front_list(List *li);
-List *del_list(List *li);
+List* push_back_list(List *li, int x);
+List* push_front_list(List *li, int x);
+List* pop_back_list(List *li);
+List* pop_front_list(List *li);
+List* del_list(List *li);
 
 #endif

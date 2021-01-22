@@ -4,7 +4,7 @@
 
 /*-------------------------------------------------------*/
 /* Fonction qui retourne une list null */
-List *new_list(void){
+List* new_list(void){
   return NULL;
 }
 
@@ -49,7 +49,7 @@ void print_list(List *li){
 
 /*-------------------------------------------------------*/
 /* Fonction qui insère un nouvel élement a la fin de la liste */
-List *push_back_list(List *li, int x){
+List* push_back_list(List *li, int x){
 
   /*crée un nouvel element  avec allocation dynamique*/
   List *element;
@@ -105,7 +105,7 @@ List *push_back_list(List *li, int x){
 
 /*-------------------------------------------------------*/
 /* Fonction qui insère un nouvel élement au debut de la liste */
-List *push_front_list(List *li, int x){
+List* push_front_list(List *li, int x){
 
   /*crée un nouvel element  avec allocation dynamique*/
   List *element;
@@ -133,7 +133,7 @@ List *push_front_list(List *li, int x){
 
 /*-------------------------------------------------------*/
 /* Fonction qui supprime le dernier element en fin de liste */
-List *pop_back_list(List *li){
+List* pop_back_list(List *li){
 
   /* si liste vide */
   if (is_empty_list(li) ==1)
@@ -183,7 +183,7 @@ List *pop_back_list(List *li){
 
 /*-------------------------------------------------------*/
 /* Fonction qui supprime le premier element en debut de liste */
-List *pop_front_list(List *li){
+List* pop_front_list(List *li){
   if (is_empty_list(li) ==1)
   {
     return li;
@@ -208,7 +208,7 @@ List *pop_front_list(List *li){
 
 /*-------------------------------------------------------*/
 /* Fonction qui supprime le premier element  tant que la liste n'est pas vider */
-List *del_list(List *li){
+List* del_list(List *li){
   if (is_empty_list(li) ==1)
   {
     return new_list();

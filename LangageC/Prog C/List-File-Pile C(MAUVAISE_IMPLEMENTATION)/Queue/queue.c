@@ -13,7 +13,7 @@ int is_empty_queue(Queue *qu){
 
 /*-------------------------------------------------------*/
 /* Fonction qui retourne une queue null */
-Queue *new_list(void){
+Queue* new_list(void){
   return NULL;
 }
 
@@ -39,7 +39,7 @@ int queue_first(Queue *qu){
 
 /*-------------------------------------------------------*/
 /* Fonction qui insère un element la fin de la liste */
-Queue *push_queue(Queue *qu, int x){
+Queue* push_queue(Queue *qu, int x){
 
   /*crée un nouvel element  avec allocation dynamique*/
   Queue *element;
@@ -108,10 +108,10 @@ void print_queue(Queue *qu){
 
 /*-------------------------------------------------------*/
 /* Fonction qui efface la premier en tete de queue */
-Queue *pop_queue(Queue *qu){
+Queue* pop_queue(Queue *qu){
     if (is_empty_queue(qu)==1)
     {
-      printf("Impossible d'efface le première element d'une liste vide ! \n");
+      printf("Impossible d'efface le premiere element d'une liste vide ! \n");
       return qu;
     }
 
@@ -122,7 +122,7 @@ Queue *pop_queue(Queue *qu){
       exit(EXIT_FAILURE);
     }
 
-    printf("Effacement de la valeur [%d] en tête \n",qu->value);
+    printf("Effacement de la valeur [%d] en tete \n",qu->value);
     element=qu->next;
 
     free(qu);
@@ -131,10 +131,10 @@ Queue *pop_queue(Queue *qu){
 
 }
 
-Queue *del_queue(Queue *qu){
+Queue* del_queue(Queue *qu){ 
     if (is_empty_queue(qu)==1)
     {
-      printf("Impossible d'efface le première element d'une liste vide ! \n");
+      printf("Impossible d'efface le premiere element d'une liste vide ! \n");
       return new_list();
     }
     

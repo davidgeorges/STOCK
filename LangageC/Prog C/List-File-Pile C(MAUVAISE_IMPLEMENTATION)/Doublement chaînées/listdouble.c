@@ -3,7 +3,7 @@
 
 /*-------------------------------------------------------*/
 /* Fonction qui retourne une list null */
-ListD *new_list(){
+ListD* new_list(){
     return NULL;
 }
 
@@ -75,7 +75,7 @@ void print_list(ListD *li){
 
 /*-------------------------------------------------------*/
 /* Fonction qui met un élement a la fin de la liste */
-ListD *push_back(ListD *li,int x){
+ListD* push_back(ListD *li,int x){
 
     ListElement *element; /* un element de la liste */
     element = malloc(sizeof(*element));
@@ -118,7 +118,7 @@ ListD *push_back(ListD *li,int x){
 
 /*-------------------------------------------------------*/
 /* Fonction qui met un élement au debut de la liste */
-ListD *push_front(ListD *li,int x){
+ListD* push_front(ListD *li,int x){
 
     ListElement *element; /* un element de la liste */
     element = malloc(sizeof(*element));
@@ -161,7 +161,7 @@ ListD *push_front(ListD *li,int x){
 
 /*-------------------------------------------------------*/
 /* Fonction qui efface  un élement a la fin de la liste */
-ListD *pop_back(ListD *li){
+ListD* pop_back(ListD *li){
     if (is_empty(li))
     {
         printf("Rien  a supprimer a la fin, la liste est vide. \n");
@@ -200,7 +200,7 @@ ListD *pop_back(ListD *li){
 
 /*-------------------------------------------------------*/
 /* Fonction qui efface un élement au debut de la liste */
-ListD *pop_front(ListD *li){
+ListD* pop_front(ListD *li){
     if (is_empty(li))
     {
         printf("Rien  a supprimer a la fin, la liste est vide. \n");
@@ -238,7 +238,7 @@ ListD *pop_front(ListD *li){
 
 /*-------------------------------------------------------*/
 /* Fonction qui Supprime toute la liste */
-ListD *del_list(ListD *li){
+ListD* del_list(ListD *li){
     while (!is_empty(li))
     {
         li =pop_front(li);

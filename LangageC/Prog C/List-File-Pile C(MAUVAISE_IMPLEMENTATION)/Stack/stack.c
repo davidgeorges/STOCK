@@ -4,7 +4,7 @@
 
 /*-------------------------------------------------------*/
 /* Fonction qui retourne une pile(stack) null */
-Stack *new_stack(){
+Stack* new_stack(){
     return NULL;
 }
 
@@ -21,7 +21,7 @@ int is_empty_stack(Stack *st){
 
 /*-------------------------------------------------------*/
 /* Fonction qui insère une valeur en fin de pile*/
-Stack *push_stack(Stack *st,int x){
+Stack* push_stack(Stack *st,int x){
 
     Stack *element;
 
@@ -43,7 +43,7 @@ Stack *push_stack(Stack *st,int x){
 
 /*-------------------------------------------------------*/
 /* Fonction qui efface la pile*/
-Stack *clear_stack(Stack *st){
+Stack* clear_stack(Stack *st){
 
     Stack *element;
     if (is_empty_stack(st)==1)
@@ -80,7 +80,7 @@ void print_stack(Stack *st){
 
 /*-------------------------------------------------------*/
 /* Fonction qui enleve la valeur au dessus de la pile*/
-Stack *pop_stack(Stack *st){
+Stack* pop_stack(Stack *st){
 
     Stack *element;
     

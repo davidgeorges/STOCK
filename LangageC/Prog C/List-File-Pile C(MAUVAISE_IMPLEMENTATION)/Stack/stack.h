@@ -17,12 +17,12 @@ struct Stack
 
 };
 
-Stack *new_stack();
+Stack* new_stack();
 int is_empty_stack(Stack *st);
-Stack *push_stack(Stack *st,int x);
-Stack *clear_stack(Stack *st);
+Stack* push_stack(Stack *st,int x);
+Stack* clear_stack(Stack *st);
 void print_stack(Stack *st);
-Stack *pop_stack(Stack *st);
+Stack* pop_stack(Stack *st);
 int top_stack(Stack *st);
 int lenght_stack(Stack *st);
 

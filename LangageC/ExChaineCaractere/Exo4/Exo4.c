@@ -6,7 +6,7 @@
 
 /*Prototype Fonction*/
 int tailleChaine(char tab[]);
-void  comparerChaine(char tab[],char tab2[],int);
+int comparerChaine(char tab[],char tab2[],int);
 
 int main(int argc, char const *argv[])
 {
@@ -29,7 +29,13 @@ int main(int argc, char const *argv[])
     printf("Avant appel fonction : %s\n",nom);
 
     /*Appel fonction inverser la chaine avec affichage apres*/
-    comparerChaine(nom,nom2,taille);
+    if( comparerChaine(nom,nom2,taille) ) {
+        printf("Chaine identiques");
+    }else
+    {
+        printf("Chaine differentes");
+    }
+    
 
 
     return 0;   
@@ -63,7 +69,7 @@ int tailleChaine(char tab[])
 
 
 /*Fonction pour inverser une chaine de caractere*/
-void comparerChaine(char tab[],char tab2[],int taille){
+int comparerChaine(char tab[],char tab2[],int taille){
 
     /*Declaration variable*/
     int i;
@@ -79,11 +85,11 @@ void comparerChaine(char tab[],char tab2[],int taille){
 
     if (trouver == taille)
     {
-        printf("Les chaines sont identiques ! ");
+        return 1;
     }
-    else
-    {
-        printf("Les chaines sont differentes ! ");
-    }
+    
+
+    return 0;
    
 }
+

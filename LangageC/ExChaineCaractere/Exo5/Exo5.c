@@ -8,8 +8,19 @@
 int k =0;
 
 /*Prototype Fonction*/
+
+/*Fonction pour recuperer la taille de la chaine*/
 int tailleChaine(char tab[]);
+
+/*Fonction pour afficher le nombre d’occurrence de chacun des caractères
+d’une chaîne de caractères. */
 void compterOccurence(char nom[],int,int,int tab[],int);
+
+/*Fonction pour afficher le nombre d’occurrence de chacun des caractères
+d’une chaîne de caractères. methode 2 */
+void compterOccurence2(char nom[],int tab[],int);
+
+/*Fonction initialiser tableau a 0*/
 void initTab(int tab[]);
 
 
@@ -33,8 +44,9 @@ int main(int argc, char const *argv[])
 
     initTab(tab);
 
-    /*Appel fonction inverser la chaine avec affichage apres*/
-    compterOccurence(nom2,97,0,tab,taille);
+    /*Appel fonction inverser la chaine avec affichage apres
+    compterOccurence(nom2,97,0,tab,taille);*/
+    compterOccurence2(nom2,tab,taille);
 
 
     printf("Avant appel fonction : %s\n",nom2);
@@ -52,7 +64,6 @@ int main(int argc, char const *argv[])
 
 
 
-/*Fonction pour recuperer la taille de la chaine*/
 int tailleChaine(char tab[])
 {
     /*Declaration variable*/
@@ -77,7 +88,7 @@ int tailleChaine(char tab[])
 }
 
 
-/*Fonction pour inverser une chaine de caractere*/
+
 void compterOccurence(char nom[],int carTrouver,int comptTab2,int tab[],int taille){
     /*Declaration variable*/
     int i =0;
@@ -105,14 +116,27 @@ void compterOccurence(char nom[],int carTrouver,int comptTab2,int tab[],int tail
     
 }
 
-/*Fonction initialiser tableau a 0*/
+
+void compterOccurence2(char nom[],int tab[],int taille){
+
+    for (int i = 0; i <taille; i++)
+    {
+        /* si l'element i de notre tableau est valide (compris entre a et z) ,
+        on fait  tab[nom[i]-97]++; (table asci de a = 97) on fesant ça on accede a l'element correspondant dans notre tableau de valeur et on incremente,
+        si on a 'a' , on fait tab[97-97] donc tab[0]++; ensuite b , tab[98-97] = tab[1]++; ...*/
+        if(nom[i]>='a' && nom[i]<='z') { tab[nom[i]-97]++; }
+    }
+    
+}
+
+
 void initTab(int tab[]){
     
+
+    /*Initialisation tableau a 0*/
     for (int i = 0; i <TAILLE2; i++)
     {
         tab[i] =0;
     }
     
 }
-
-
