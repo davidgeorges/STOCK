@@ -11,14 +11,6 @@ List* new_list(void){
   return liste;
 }
 
-/*-------------------------------------------------------*/
-/* Fonction qui renvoie si la list est vide */
-int is_empty_list(List  *li){
-  if(li == NULL)
-    return 1;
-
-  return 0;
-}
 
 /*-------------------------------------------------------*/
 /* Fonction qui renvoie la longueur de la list */
@@ -47,7 +39,7 @@ void print_list(List *li){
   int i =0;
   Element *actuel = li->premier;
 
-  while (actuel != NULL)
+  while (actuel!= NULL)
   {
     printf("Valeur [%d] incide [%d]  \n", actuel->value,i);
     actuel = actuel->next;

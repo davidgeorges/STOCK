@@ -20,7 +20,6 @@ struct Element
 
 
 Element* new_stack();
-int is_empty_stack(Element *st);
 void push_stack(Element *st,int x);
 void clear_stack(Element *st);
 void print_stack(Element *st);

@@ -28,7 +28,6 @@ struct List
 
 /* Prototypes */
 List* new_list(void);
-int is_empty_list(List  *li);
 int list_length(List *li);
 void print_list(List *li);
 void insertBack(List *li, int x);
