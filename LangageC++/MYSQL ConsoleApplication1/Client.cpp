@@ -44,20 +44,20 @@ void Client::registerClient()
 
 			if (idAvailable(id))// si l'id est disponible
 			{
-				/*Si l'id n'est pas supérieur a la taille maximal*/
+				/*Si l'id n'est pas supï¿½rieur a la taille maximal*/
 				if (id.length()<=12)
 				{
 					cout << "Vous aller proceder a l'inscription l'id est disponible." << endl;
 					cout << "Veuillez entrer votre prenom :" << endl;
 					cin >> namee;
 					cout << "\n";
-					/*Si le nom n'est pas supérieur a la taille maximal*/
+					/*Si le nom n'est pas supï¿½rieur a la taille maximal*/
 					if (namee.length()<=14)
 					{
 						cout << "Veuillez entrer votre score :" << endl;
 						cin >> scoree;
 						cout << "\n";
-						/*Si le score n'est pas supérieur a la taille maximal*/
+						/*Si le score n'est pas supï¿½rieur a la taille maximal*/
 						if ((scoree.length() <= 3))
 						{
 							cout << "Veuillez entrer votre mot de passe :" << endl;
@@ -69,10 +69,10 @@ void Client::registerClient()
 							/*Si l'est mot de passe corresponde*/
 							if ((mdp.compare(mdpC) == 0))
 							{
-								/*Si le mot de passe n'est pas supérieur a la taille maximal*/
+								/*Si le mot de passe n'est pas supï¿½rieur a la taille maximal*/
 								if ((mdp.length() <= 20))
 								{
-									string  insert_query = "INSERT INTO test2 (id,name,score,mdp) VALUES ('" + id + "', '" + namee + "', '" + scoree + "', '" + mdp + "')";//on insère les valeur dans la table mysql
+									string  insert_query = "INSERT INTO test2 (id,name,score,mdp) VALUES ('" + id + "', '" + namee + "', '" + scoree + "', '" + mdp + "')";//on insï¿½re les valeur dans la table mysql
 									qstate = mysql_query(mysql, insert_query.c_str());
 									if (!qstate)//si qstate ==0
 									{
@@ -142,7 +142,7 @@ int Client::idAvailable(string testId)
 	if ((qstate = mysql_query(mysql, read_query)) == 0)// connection a la table avec le 'SELECT * FROM test',si 0 = on a acceder a  la table,si 1 == on n'est pas connecter a la table 
 	{
 		res = mysql_store_result(mysql);// on lit et stock le resultat en entier dans 'res'
-		while ((row = mysql_fetch_row(res)))// tant qu'ont a quelque chose a lire de la ligne ( tant que ça vaut pas null)
+		while ((row = mysql_fetch_row(res)))// tant qu'ont a quelque chose a lire de la ligne ( tant que ï¿½a vaut pas null)
 		{
 			if (testId.compare(row[0]) == 0)
 			{
@@ -288,7 +288,7 @@ void Client::loginClient()
 				/*---------*/
 				res = mysql_store_result(mysql);
 				row = mysql_fetch_row(res);
-				/*même mot de passe dans la base de donner correspondant a l'id donner*/
+				/*mï¿½me mot de passe dans la base de donner correspondant a l'id donner*/
 				if (mdp.compare(row[0]) == 0)
 				{
 					cout << "Connexion avec success ! " << endl;

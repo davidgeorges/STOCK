@@ -29,7 +29,7 @@ Stack* push_stack(Stack *st,int x){
 
     if (element == NULL)
     {
-        printf("La pile est vide");
+        printf("Erreur allocation.");
         return EXIT_FAILURE;
     }
 
