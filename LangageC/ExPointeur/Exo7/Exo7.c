@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 9
+#define N 10
 
 void diag(int *p,int n);
 
@@ -53,19 +53,10 @@ void diag(int *p,int n){
     //tout les i+N+1 'ittération' nous somme a la meme ligne et colonne donc en diagonale  ( avec deux boucle c'est quand nous avons i==j on est en diago )
     for (i =i+N+1; i <n*n; i=i+N+1)
     {   
-       if (N%2==0 && i<n*n)
-       {
-            printf("[%d]\n" ,*(p+i));
-            *(p+i) =0;
-        }else
-       {
-           if(N%2==1 && i<n*n){
-            printf("[%d]\n" ,*(p+i));
-            *(p+i) =0;
-        }
-       }
-             
-        
+
+        printf("[%d]\n" ,*(p+i));
+        *(p+i) =0;
+
     }  
     printf("\n");
 
